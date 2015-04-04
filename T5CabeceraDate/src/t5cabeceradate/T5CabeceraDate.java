@@ -40,7 +40,7 @@ public class T5CabeceraDate {
 
 //  Intento de crear un bucle que se pare cuando llega la fecha actual
 //  do {
-   System.out.println(getDateValue());
+//   System.out.println(getDateValue());
 // }while(getDateValue().compareTo(ZoneId.systemDefault().toString()) 
 //          != getDateValue().compareTo("Wed,1 Apr 2015 14:35:10 CEST"));
 //  System.out.println(getDateValue().compareTo("EEE,d MMM yyyy HH:mm:ss z"));
