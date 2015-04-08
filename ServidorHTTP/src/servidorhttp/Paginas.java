@@ -16,6 +16,7 @@ public class Paginas {
 */
   public static final String primeraCabecera =
           "Content-Type:text/html;charset=UTF-8";
+  
   //contenido index
   public static final String html_index = "<html>"
           + "<head><title>index</title></head>"
@@ -24,6 +25,8 @@ public class Paginas {
           + "<p>Tu servidor HTTP mínimo funciona correctamente</p>"
           + "</body>"
           + "</html>";
+  
+  
   //contenido quijote
   public static final String html_quijote = "<html>"
           + "<head><title>quijote</title></head>"
@@ -43,9 +46,9 @@ public class Paginas {
           + "casa una ama que pasaba de los cuarenta, y una sobrina que "
           + "no llegaba a los veinte, y un mozo de campo y plaza, que "
           + "así ensillaba el rocín como tomaba la podadera...</p>"
-          
           + "</body>"
           + "</html>";
+  
   //contenido noEncontrado
   public static final String html_noEncontrado = "<html>"
           + "<head><title>noEncontrado</title></head>"
