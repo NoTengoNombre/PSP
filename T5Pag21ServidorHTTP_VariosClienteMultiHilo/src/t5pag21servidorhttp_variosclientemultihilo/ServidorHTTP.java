@@ -46,31 +46,25 @@ public class ServidorHTTP {
 // ♣ METODO
 //  imprimeDisponible();
 //  ♥ CLASE
-  Socket socCliente;
+  Socket socketCliente;
   
-//  try {
-//   socServidor = new ServerSocket(puerto);
+  try {
+   socServidor = new ServerSocket(puerto);
 //  Ante una peticion entrante , procesa la peticion 
 //  por el Socket Cliente
 //  por donde la recibe
   while (true) {   
 //   A la espera de Peticiones
 //   Acepta una peticion y le asigna un Socket Cliente para la respuesta
-   socCliente = socServidor.accept();
+   socketCliente = socServidor.accept();
 //   CREA UN NUEVO HILO PARA DESPACHAR LA PETICION POR EL SOCKETCLIENTE QUE 
 //   LE ASIGNO
-//   hilo = new HiloDespachador(socCliente);
+   hilo = new HiloDespachador(socketCliente);
 //   Comienza el hilo
-//   hilo.start();
-//   Atiendo un cliente
-   System.out.println("Atendiendo al cliente que se conecto al Servidor");
-//   La peticion que queramos 
-   procesaPeticion(socCliente);
-//   Cierra la conexion entrante
-   socCliente.close();
-   System.out.println("Cliente Atendido y cierra Conexion");
-//   }
-//  }catch(IOException ex){
+   hilo.start();
+
+   }
+  }catch(IOException ex){
 //   System.out.println("Error I/O → "+ex);
   }
  }
@@ -80,7 +74,7 @@ public class ServidorHTTP {
  */
 
 // ♣ METODOS
- private static void procesaPeticion(Socket socketCliente) throws IOException{
+ public static void procesaPeticion(Socket socketCliente) throws IOException{
 //  Variable Locales
   String peticion;
   String html;

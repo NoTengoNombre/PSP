@@ -8,6 +8,8 @@ package t5pag21servidorhttp_variosclientemultihilo;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -31,17 +33,19 @@ public class HiloDespachador extends Thread {
 // METODO RUN 
  public void run(){
   try {
-//   tramita la peticion por el socketCliente
-  socServidor = new ServerSocket(puerto);
-  while(true){
-//   acepta una peticion y le asigna un socket cliente para la respuesta
-   socketCliente = socServidor.accept();
-//   crea un nuevo hilo para despachar la peticion por el 
-//   socketCliente que le asigno 
-   hilo = new HiloDespachador(socketCliente);
-   hilo.start();
-  }
-  }catch(IOException ex){
+ //   La peticion que queramos 
+   ServidorHTTP.procesaPeticion(socketCliente);
+//   Cierra la conexion entrante
+   socketCliente.close();
+//   Atiendo un cliente
+   System.out.println("Atendiendo al cliente que se conecto al Servidor");
+//   La peticion que queramos 
+//   procesaPeticion(socketCliente);
+//   Cierra la conexion entrante
+//   socketCliente.close();
+   System.out.println("Cliente Atendido y cierra Conexion");
+  } catch (IOException ex) {
+ Logger.getLogger(HiloDespachador.class.getName()).log(Level.SEVERE, null, ex);
   }
  } // fin run
  } // fin clase HiloDespachador
