@@ -50,7 +50,7 @@ private void initComponents(){
  
   jButton1.setText("Iniciar Trasmision y medir el tiempo");
   jButton1.addActionListener(new java.awt.event.ActionListener(){
-//   ♣ METODO
+// ♦ Metodo .add   
 public void actionPerformed(java.awt.event.ActionEvent evt){
    jButton1ActionPerformed(evt);
 }
@@ -68,6 +68,7 @@ javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
 jPanel1.setLayout(jPanel1Layout);
 jPanel1Layout.setHorizontalGroup(
 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+// ♦ Metodo .add         
 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,jPanel1Layout.createSequentialGroup().addGap(0,168,Short.MAX_VALUE)
 .addComponent(jButton1))
 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -84,7 +85,8 @@ jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 //Asocia al objeto jPanel1Layout metodos encesarios 
 jPanel1Layout.setVerticalGroup(
 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-.addGroup(jPanel1Layout.createSequentialGroup()
+// ♦ Metodo .add         
+ .addGroup(jPanel1Layout.createSequentialGroup()
 .addComponent(jTextField1,javax.swing.GroupLayout.PREFERRED_SIZE,
      javax.swing.GroupLayout.DEFAULT_SIZE,javax.swing.GroupLayout.PREFERRED_SIZE)
 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -101,6 +103,7 @@ javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
 getContentPane().setLayout(layout);
 layout.setHorizontalGroup(
 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+// ♦ Metodo .add   
 .addGroup(layout.createSequentialGroup()
 .addContainerGap()
 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,13 +116,14 @@ layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 
 layout.setVerticalGroup(
 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+// ♦ Metodo .add    
 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,layout.createSequentialGroup()
 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE,Short.MAX_VALUE)
 .addComponent(jLabel1)
 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 .addComponent(jPanel1,javax.swing.GroupLayout.PREFERRED_SIZE,javax.swing.GroupLayout.DEFAULT_SIZE,javax.swing.GroupLayout.PREFERRED_SIZE))
 );
-
+// ♦ Metodo .add   
 pack();
 } // </editor-fold>//GEN-END:initComponents
  
@@ -174,6 +178,7 @@ java.util.logging.Logger.getLogger(Ventana.class.getName()).log(java.util.loggin
  Create and display the form
 */
 java.awt.EventQueue.invokeLater(new Runnable(){
+ // ♦ Metodo  
 // ♦ HILO
  @Override
  public void run(){
