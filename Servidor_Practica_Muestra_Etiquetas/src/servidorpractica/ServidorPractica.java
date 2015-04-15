@@ -58,7 +58,7 @@ public class ServidorPractica {
  public static Socket socketCliente;
  public static ServerSocket socServidor;
  public static ServidorPractica tiempo;
- public static ServidorPractica fecha = new ServidorPractica();
+ public static ServidorPractica fecha;
 
 // Atributos 
 // Constante define puerto para la conexion
@@ -105,6 +105,7 @@ public class ServidorPractica {
   }
  }
 
+// Este Metodo tiene que ir en la clase del HILO DESPACHADOR
 // ♦ Metodo
  public static void procesaPeticion(Socket socketCliente) throws IOException {
   //variables locales
@@ -147,7 +148,7 @@ public class ServidorPractica {
 //  Peticion del Objeto
   if (peticion.startsWith("GET")) {
    //extrae la subcadena entre 'GET' y 'HTTP/1.1'
-   peticion = peticion.substring(3, peticion.lastIndexOf("HTTP"));
+   peticion = peticion.substring(3,peticion.lastIndexOf("HTTP"));
 // ► ESTE SALTO DE LINEA PROVOCA QUE SE VEA LA ETIQUETAS HTML
 //   printWriter.println();
 //   ********************
@@ -166,7 +167,7 @@ public class ServidorPractica {
 //    Indica caracteres para un Content-Type
     printWriter.println("Content-Length: " + html.length());
 //    Muestra la cabecera Date 
-    printWriter.println("Date : " + fecha.getDateValue1());
+    printWriter.println("Date: " + fecha.getDateValue1());
 //    Linea Separacion
     printWriter.println("\n");
 //    Cuerpo Mensaje
@@ -183,7 +184,7 @@ public class ServidorPractica {
     // EL +1 ES PORQUE NECESITA que empiece a leer desde el caracter 1º 
     printWriter.println("Content-Length: " + html.length() + 1);
     //    Muestra la cabecera Date 
-    printWriter.println("Date : " + fecha.getDateValue1());
+    printWriter.println("Date: " + fecha.getDateValue1());
 //    Linea Separacion
     printWriter.println();
     printWriter.println("\n");
@@ -200,7 +201,7 @@ public class ServidorPractica {
 //    Indica caracteres para un Content-Type
     printWriter.println("Content-Length: " + html.length() + 1);
     //    Muestra la cabecera Date 
-    printWriter.println("Date : " + fecha.getDateValue1());
+    printWriter.println("Date: " + fecha.getDateValue1());
     printWriter.println();
 //    Linea Separacion
     printWriter.println("\n");
@@ -212,6 +213,7 @@ public class ServidorPractica {
 
 // Tiempo Final
   long time_end = System.currentTimeMillis();
+
   long tiempo_total = time_end - time_start;
   System.out.println("Tiempo procesamiento -> ");
   System.out.print("tiempo inicio "+time_start);
@@ -221,7 +223,7 @@ public class ServidorPractica {
 
 // ♦ Metodo
  private static void imprimeDisponible() {
-  out.println("Date : " + fecha.getDateValue1());
+  out.println("Date: " + fecha.getDateValue1());
   System.out.println("El Servidor WEB se está ejecutando y permanece a la "
           + "escucha por el puerto 8066.\nEscribe en la barra de direcciones "
           + "de tu explorador preferido:\n\nhttp://localhost:8066\npara "
